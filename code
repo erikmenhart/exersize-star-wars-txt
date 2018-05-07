@@ -1,0 +1,21 @@
+String txt;
+
+float y;
+
+void setup() 
+{
+  size(800, 800, P3D);
+  String[] lines=loadStrings("erik.txt");
+  txt = join(lines, "/n");
+  y=height/2;
+}
+void draw() {
+  translate(width/2, height/2);
+  background(0);
+  fill(255);
+  textSize(64);
+  textAlign(CENTER);
+  rotateX(PI/4);
+  text(txt, -width/2, y, width, height*10);
+  y--;
+}
